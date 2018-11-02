@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Progress } from 'react-sweet-progress';
+import "react-sweet-progress/lib/style.css";
 
 import Landing from "./components/Landing";
 import Name from "./components/Name";
@@ -16,11 +18,11 @@ class App extends Component {
 
     this.state = {
       error: null,
-      progress: this._setProgress(),
+      progress: 0,
       name: ``,
       email: ``,
       phone: ``,
-      salary: ``
+      salary: ``,
     };
 
     this._setProgress = this._setProgress.bind(this);
@@ -31,6 +33,33 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        
+
+
+      <Progress percent={this.state.progress}
+      theme={
+        {
+          default: {
+            symbol: this.state.progress + '%',
+            trailColor: 'lightblue',
+            color: 'blue'
+          },
+          active: {
+            symbol: this.state.progress + '%',
+            trailColor: 'yellow',
+            color: 'orange'
+          },
+          success: {
+            symbol: this.state.progress + '%',
+            trailColor: 'lime',
+            color: 'green'
+          }
+        }
+      }
+      />
+      <button className="button" onClick={() => this._setProgress()}>
+       Set Progress
+      </button>
         <BrowserRouter basename="signup">
           <Switch>
             <Route exact path="/" render={() => <Landing />} />
@@ -93,7 +122,7 @@ class App extends Component {
   }
 
   _setProgress() {
-    return 5;
+    if(this.state.progress <100)this.setState({progress: this.state.progress+20})
   }
 
   _navigate() {
