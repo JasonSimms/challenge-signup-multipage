@@ -5,10 +5,10 @@ const Summary = props => {
     <div className="container">
       <h1>Summary:</h1>
       <p>{JSON.stringify(props.data)}</p>
-      <button className="button" onClick={() => this.props.sign("up")}>
+      <button className="button">
         Sign Up!
       </button>
-      <button className="button" onClick={() => this.props.sign("clear")}>
+      <button className="button" onClick={() => props.reset()}>
         Start Over
       </button>
     </div>
