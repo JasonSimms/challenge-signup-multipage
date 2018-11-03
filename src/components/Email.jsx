@@ -1,18 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class Email extends Component {
-  componentDidMount() {
-    // this.props.handleInputChange('email', '')
-    console.log(`Name Mounted`);
-  }
 
   render() {
-    console.log(`Rendered`);
 
     return (
       <div className="container">
-        <h1>Email</h1>
+        <h1>Where can we send our great offers?</h1>
         <input
           type="email"
           value={this.props.target}

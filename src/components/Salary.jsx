@@ -1,27 +1,28 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class Salary extends Component {
-  componentDidMount() {
-    // this.props.handleInputChange('email', '')
-    console.log(`Name Mounted`);
-  }
 
   render() {
-    console.log(`Rendered`);
+    const labels = [
+      "0 - 1.000",
+      "1.000 - 2.000",
+      "2.000 - 3.000",
+      "3.000 - 4.000",
+      "Mehr als 4.000"
+    ];
 
+    let mappedSalary = labels.map((range,index) => <div key={range}><input
+      type="radio"
+      value={range}
+      onChange={evt =>
+        this.props.handleInputChange("salary", evt.target.value)
+      }
+      className="input"
+    />{range}</div>)
     return (
       <div className="container">
-        <h1>Salary</h1>
-        <input
-          type="number"
-          value={this.props.target}
-          onChange={evt =>
-            this.props.handleInputChange("salary", evt.target.value)
-          }
-          className="input"
-          placeholder="Salary"
-        />
+        <h1>Household Salary Range?</h1>
+        {mappedSalary}
         <br />
         <br />
         <p>{this.props.error}</p>

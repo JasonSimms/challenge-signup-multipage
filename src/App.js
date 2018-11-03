@@ -12,10 +12,7 @@ import Salary from "./components/Salary";
 import Summary from "./components/Summary";
 import NotFound from "./components/NotFound";
 
-import NavButtons from "./components/Navigation"
-
-
-
+// import NavButtons from "./components/Navigation";
 
 class App extends Component {
   constructor(props) {
@@ -34,7 +31,7 @@ class App extends Component {
     this._setProgress = this._setProgress.bind(this);
     this._handleInputChange = this._handleInputChange.bind(this);
     this._reset = this._reset.bind(this);
-    this._formSubmit = this._formSubmit.bind(this)
+    this._navigate = this._navigate.bind(this);
   }
 
   render() {
@@ -43,40 +40,45 @@ class App extends Component {
         target={this.state.name}
         handleInputChange={this._handleInputChange}
         error={this.state.error}
-        submit={this._formSubmit}
       />,
       <Email
         target={this.state.email}
         handleInputChange={this._handleInputChange}
         error={this.state.error}
-        submit={this._formSubmit}
-
       />,
       <Phone
         target={this.state.phone}
         handleInputChange={this._handleInputChange}
         error={this.state.error}
-        submit={this._formSubmit}
-
       />,
       <Salary
         target={this.state.salary}
         handleInputChange={this._handleInputChange}
         error={this.state.error}
-        submit={this._formSubmit}
-
       />,
       <Summary data={this.state} error={this.state.error} reset={this._reset} />
     ];
-let navigation =  <div>Future place of nav</div>
-    if(this.state.progress > 0){navigation = <NavButtons submit={this._formSubmit}/>}
+
+    let navNext, navBack;
+    
+    if (this.state.step > 0 && this.state.step < 4) {
+      navBack = (
+        <button className="button" onClick={() => this._navigate("back")}>
+          Back
+        </button>
+      );
+    }
+    
+    if (this.state.step < 4) {
+      navNext = (
+        <button className="button" onClick={() => this._navigate()}>
+          Next
+        </button>
+      );
+    }
 
     return (
       <React.Fragment>
-        <div>
-          {" "}
-          <p>Try this!</p>
-        </div>
         <Progress
           percent={this.state.progress}
           theme={{
@@ -98,9 +100,6 @@ let navigation =  <div>Future place of nav</div>
           }}
         />
 
-        <button className="button" onClick={() => this._setProgress()}>
-          Set Progress
-        </button>
         <BrowserRouter>
           <React.Fragment>
             <Switch>
@@ -108,14 +107,19 @@ let navigation =  <div>Future place of nav</div>
               <Route
                 exact
                 path="/signup"
-                render={() => displayedFormARR[this.state.step]}
+                render={() => (
+                  <div>
+                    {displayedFormARR[this.state.step]}
+                    {navBack}
+                    {navNext}
+                  </div>
+                )}
               />
 
               <Route component={NotFound} />
             </Switch>
           </React.Fragment>
         </BrowserRouter>
-        {navigation}
       </React.Fragment>
     );
   }
@@ -123,13 +127,8 @@ let navigation =  <div>Future place of nav</div>
   _setProgress() {
     if (this.state.progress < 100)
       this.setState({
-        progress: this.state.progress + 20,
-        step: this.state.step + 1
+        progress: this.state.progress + 20
       });
-  }
-
-  _navigate() {
-    console.log(`navigated!`);
   }
 
   _handleInputChange(key, newValue) {
@@ -150,11 +149,14 @@ let navigation =  <div>Future place of nav</div>
     });
   }
 
-  _formSubmit(){
-    console.log(`submitted`)
-    this.setState({
-      step: this.state.step + 1
-    })
+  _navigate(key) {
+    if (key === "back") this.setState({ step: this.state.step - 1 });
+    else {
+      this._setProgress();
+      this.setState({
+        step: this.state.step + 1
+      });
+    }
   }
 }
 export default App;
