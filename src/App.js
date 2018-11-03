@@ -60,7 +60,7 @@ class App extends Component {
     ];
 
     let navNext, navBack;
-    
+
     if (this.state.step > 0 && this.state.step < 4) {
       navBack = (
         <button className="button" onClick={() => this._navigate("back")}>
@@ -68,7 +68,7 @@ class App extends Component {
         </button>
       );
     }
-    
+
     if (this.state.step < 4) {
       navNext = (
         <button className="button" onClick={() => this._navigate()}>
@@ -126,9 +126,9 @@ class App extends Component {
 
   _setProgress() {
     if (this.state.progress < 100)
-      this.setState({
-        progress: this.state.progress + 20
-      });
+      this.setState(prevState => ({
+        progress: prevState.progress + 20
+      }));
   }
 
   _handleInputChange(key, newValue) {
@@ -150,12 +150,12 @@ class App extends Component {
   }
 
   _navigate(key) {
-    if (key === "back") this.setState({ step: this.state.step - 1 });
+    if (key === "back") this.setState(prevState => ({ step: prevState.step - 1 }));
     else {
       this._setProgress();
-      this.setState({
-        step: this.state.step + 1
-      });
+      this.setState(prevState => ({
+        step: prevState.step + 1
+      }));
     }
   }
 }
