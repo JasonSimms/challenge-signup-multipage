@@ -1,9 +1,11 @@
+// Library Imports
 import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 
+// Import all Components:
 import Landing from "./components/Landing";
 import Name from "./components/Name";
 import Email from "./components/Email";
@@ -11,8 +13,6 @@ import Phone from "./components/Phone";
 import Salary from "./components/Salary";
 import Summary from "./components/Summary";
 import NotFound from "./components/NotFound";
-
-// import NavButtons from "./components/Navigation";
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +22,8 @@ class App extends Component {
       error: null,
       progress: 0,
       step: 0,
-      name: ``,
+      nameFirst: ``,
+      nameLast: ``,
       email: ``,
       phone: ``,
       salary: ``
@@ -32,9 +33,11 @@ class App extends Component {
     this._handleInputChange = this._handleInputChange.bind(this);
     this._reset = this._reset.bind(this);
     this._navigate = this._navigate.bind(this);
+    this._validate = this._validate.bind(this);
   }
 
   render() {
+    // Array of Components to support conditional rendering based on this.state.step.
     const displayedFormARR = [
       <Name
         target={this.state.name}
@@ -59,6 +62,7 @@ class App extends Component {
       <Summary data={this.state} error={this.state.error} reset={this._reset} />
     ];
 
+    // Build Navigational Controls
     let navNext, navBack;
 
     if (this.state.step > 0 && this.state.step < 4) {
@@ -79,27 +83,6 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Progress
-          percent={this.state.progress}
-          theme={{
-            default: {
-              symbol: this.state.progress + "%",
-              trailColor: "lightblue",
-              color: "blue"
-            },
-            active: {
-              symbol: this.state.progress + "%",
-              trailColor: "yellow",
-              color: "orange"
-            },
-            success: {
-              symbol: this.state.progress + "%",
-              trailColor: "lime",
-              color: "green"
-            }
-          }}
-        />
-
         <BrowserRouter>
           <React.Fragment>
             <Switch>
@@ -109,6 +92,26 @@ class App extends Component {
                 path="/signup"
                 render={() => (
                   <div>
+                    <Progress
+                      percent={this.state.progress}
+                      theme={{
+                        default: {
+                          symbol: this.state.progress + "%",
+                          trailColor: "lightblue",
+                          color: "blue"
+                        },
+                        active: {
+                          symbol: this.state.progress + "%",
+                          trailColor: "yellow",
+                          color: "orange"
+                        },
+                        success: {
+                          symbol: this.state.progress + "%",
+                          trailColor: "lime",
+                          color: "green"
+                        }
+                      }}
+                    />
                     {displayedFormARR[this.state.step]}
                     {navBack}
                     {navNext}
@@ -124,10 +127,29 @@ class App extends Component {
     );
   }
 
+  _validate(key) {
+    switch (key) {
+      case 0:
+        if (this.state.nameFirst && this.state.nameLast) return true;
+        break;
+      case 1:
+        if (this.state.email) return true;
+        break;
+      case 2:
+        if (this.state.phone) return true;
+        break;
+      case 3:
+        if (this.state.salary) return true;
+        break;
+      default:
+        return false;
+    }
+  }
+
   _setProgress() {
     if (this.state.progress < 100)
       this.setState(prevState => ({
-        progress: prevState.progress + 20
+        progress: prevState.progress + 25
       }));
   }
 
@@ -142,7 +164,8 @@ class App extends Component {
       error: null,
       progress: 0,
       step: 0,
-      name: "",
+      nameFirst: ``,
+      nameLast:``,
       email: ``,
       phone: ``,
       salary: ``
@@ -150,8 +173,10 @@ class App extends Component {
   }
 
   _navigate(key) {
-    if (key === "back") this.setState(prevState => ({ step: prevState.step - 1 }));
-    else {
+    if (key === "back")
+      this.setState(prevState => ({ step: prevState.step - 1 }));
+    else if(this._validate(this.state.step)){
+      this._validate(this.state.step);
       this._setProgress();
       this.setState(prevState => ({
         step: prevState.step + 1
