@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 class Name extends Component {
   componentDidMount() {
@@ -8,7 +7,7 @@ class Name extends Component {
   }
 
   render() {
-    console.log(`Rendered`);
+    console.log(this.props);
 
     return (
       <div className="container">
@@ -22,14 +21,6 @@ class Name extends Component {
           className="input"
           placeholder="Name"
         />
-        <br />
-        <br />
-        <Link className="link" to="/">
-          <button className="button">Previous</button>
-        </Link>
-        <Link className="link" to="/2">
-          <button className="button">Next</button>
-        </Link>
         <br />
         <br />
         <p>{this.props.error}</p>

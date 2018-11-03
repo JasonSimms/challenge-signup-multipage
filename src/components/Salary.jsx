@@ -24,14 +24,6 @@ class Salary extends Component {
         />
         <br />
         <br />
-        <Link className="link" to="/3">
-          <button className="button">Previous</button>
-        </Link>
-        <Link className="link" to="/5">
-          <button className="button">Next</button>
-        </Link>
-        <br />
-        <br />
         <p>{this.props.error}</p>
       </div>
     );
