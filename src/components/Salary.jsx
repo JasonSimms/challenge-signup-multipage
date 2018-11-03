@@ -20,7 +20,7 @@ class Salary extends Component {
       className="input"
     />{range}</div>)
     return (
-      <div className="container">
+      <div className="container salary-form">
         <h1>Household Salary Range?</h1>
         {mappedSalary}
         <br />

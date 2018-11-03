@@ -34,13 +34,9 @@ class App extends Component {
     this._reset = this._reset.bind(this);
     this._navigate = this._navigate.bind(this);
     this._validate = this._validate.bind(this);
-
-
   }
 
   render() {
-
-    
     // Array of Components to support conditional rendering based on this.state.step.
     const displayedFormARR = [
       <Name
@@ -71,7 +67,7 @@ class App extends Component {
 
     if (this.state.step > 0 && this.state.step < 4) {
       navBack = (
-        <button className="button" onClick={() => this._navigate("back")}>
+        <button className="button back" onClick={() => this._navigate("back")}>
           Back
         </button>
       );
@@ -79,7 +75,7 @@ class App extends Component {
 
     if (this.state.step < 4) {
       navNext = (
-        <button className="button" onClick={() => this._navigate()}>
+        <button className="button next" onClick={() => this._navigate()}>
           Next
         </button>
       );
@@ -136,7 +132,7 @@ class App extends Component {
     let validationMessage = `Valid Entry!`;
     switch (key) {
       case 0:
-      regex = /^[a-zA-Z]*$/gm
+        regex = /^[a-zA-Z]*$/gm;
         if (
           this.state.nameFirst &&
           this.state.nameLast &&
@@ -147,7 +143,7 @@ class App extends Component {
         else validationMessage = `Please Enter a Valid First and Last Name`;
         break;
       case 1:
-      regex = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@(([0-9a-zA-Z])+([-\w]*[0-9a-zA-Z])*\.)+[a-zA-Z]{2,9})$/
+        regex = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@(([0-9a-zA-Z])+([-\w]*[0-9a-zA-Z])*\.)+[a-zA-Z]{2,9})$/;
         if (
           this.state.email &&
           this.state.email.includes("@") &&
@@ -158,10 +154,10 @@ class App extends Component {
 
         break;
       case 2:
-      regex = /\d{5,20}/
-        if (this.state.phone.match(regex))
-          return true;
-        else validationMessage = `Invalid Phone - Digits Only Please! Length must be between 5 and 20`;
+        regex = /\d{5,20}/;
+        if (this.state.phone.match(regex)) return true;
+        else
+          validationMessage = `Invalid Phone - Digits Only Please! Length must be between 5 and 20`;
 
         break;
       case 3:
@@ -205,11 +201,13 @@ class App extends Component {
     if (key === "back")
       this.setState(prevState => ({ step: prevState.step - 1 }));
     else if (this._validate(this.state.step)) {
-      this._validate(this.state.step);
       this._setProgress();
-      this.setState(prevState => ({
-        step: prevState.step + 1
-      }));
+
+      setTimeout(() => {
+        this.setState(prevState => ({
+          step: prevState.step + 1
+        }));
+      }, 1000);
     }
   }
 }

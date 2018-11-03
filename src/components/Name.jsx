@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Name extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container name-form">
         <h1>Just A Few Questions To Get Us Started...</h1>
         <input
           type="name"
@@ -12,7 +12,7 @@ class Name extends Component {
             this.props.handleInputChange("nameFirst", evt.target.value)
           }
           className="input"
-          placeholder="Family Name"
+          placeholder="John"
         />
         <input
           type="name"
@@ -21,7 +21,7 @@ class Name extends Component {
             this.props.handleInputChange("nameLast", evt.target.value)
           }
           className="input"
-          placeholder="Last Name"
+          placeholder="Doe"
         />
         <br />
         <br />
