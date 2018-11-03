@@ -34,9 +34,13 @@ class App extends Component {
     this._reset = this._reset.bind(this);
     this._navigate = this._navigate.bind(this);
     this._validate = this._validate.bind(this);
+
+
   }
 
   render() {
+
+    
     // Array of Components to support conditional rendering based on this.state.step.
     const displayedFormARR = [
       <Name
@@ -128,22 +132,47 @@ class App extends Component {
   }
 
   _validate(key) {
+    let regex;
+    let validationMessage = `Valid Entry!`;
     switch (key) {
       case 0:
-        if (this.state.nameFirst && this.state.nameLast) return true;
+      regex = /^[a-zA-Z]*$/gm
+        if (
+          this.state.nameFirst &&
+          this.state.nameLast &&
+          this.state.nameLast.match(regex) &&
+          this.state.nameFirst.match(regex)
+        )
+          return true;
+        else validationMessage = `Please Enter a Valid First and Last Name`;
         break;
       case 1:
-        if (this.state.email) return true;
+      regex = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@(([0-9a-zA-Z])+([-\w]*[0-9a-zA-Z])*\.)+[a-zA-Z]{2,9})$/
+        if (
+          this.state.email &&
+          this.state.email.includes("@") &&
+          this.state.email.includes(".")
+        )
+          return true;
+        else validationMessage = `Invalid Email - Must Contain @`;
+
         break;
       case 2:
-        if (this.state.phone) return true;
+      regex = /\d{5,20}/
+        if (this.state.phone.match(regex))
+          return true;
+        else validationMessage = `Invalid Phone - Digits Only Please! Length must be between 5 and 20`;
+
         break;
       case 3:
         if (this.state.salary) return true;
+        else validationMessage = `Please Choose a Salary Range`;
+
         break;
       default:
         return false;
     }
+    alert(validationMessage);
   }
 
   _setProgress() {
@@ -165,7 +194,7 @@ class App extends Component {
       progress: 0,
       step: 0,
       nameFirst: ``,
-      nameLast:``,
+      nameLast: ``,
       email: ``,
       phone: ``,
       salary: ``
@@ -175,7 +204,7 @@ class App extends Component {
   _navigate(key) {
     if (key === "back")
       this.setState(prevState => ({ step: prevState.step - 1 }));
-    else if(this._validate(this.state.step)){
+    else if (this._validate(this.state.step)) {
       this._validate(this.state.step);
       this._setProgress();
       this.setState(prevState => ({
