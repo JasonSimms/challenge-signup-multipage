@@ -3,8 +3,9 @@ import React, { Component } from "react";
 class Name extends Component {
   render() {
     return (
-      <div className="container name-form">
+      <div className="name-form">
         <h1>Just A Few Questions To Get Us Started...</h1>
+        <p className="input-title">First Name:</p>
         <input
           type="name"
           value={this.props.target}
@@ -14,6 +15,8 @@ class Name extends Component {
           className="input"
           placeholder="John"
         />
+        <p className="input-title">Last Name:</p>
+
         <input
           type="name"
           value={this.props.target}

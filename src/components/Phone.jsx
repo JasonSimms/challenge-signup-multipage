@@ -5,8 +5,10 @@ class Phone extends Component {
   render() {
 
     return (
-      <div className="container phone-form">
+      <div className="phone-form">
         <h1>Where can we give you a call?</h1>
+        <p className="input-title">Phone Number:</p>
+
         <input
           type="string"
           value={this.props.target}
@@ -14,7 +16,7 @@ class Phone extends Component {
             this.props.handleInputChange("phone", evt.target.value)
           }
           className="input"
-          placeholder="phone"
+          placeholder="XXXXXXXXXXX"
         />
         <br />
         <br />

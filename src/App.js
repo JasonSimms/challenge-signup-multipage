@@ -13,6 +13,7 @@ import Phone from "./components/Phone";
 import Salary from "./components/Salary";
 import Summary from "./components/Summary";
 import NotFound from "./components/NotFound";
+import End from "./components/End";
 
 class App extends Component {
   constructor(props) {
@@ -87,11 +88,12 @@ class App extends Component {
           <React.Fragment>
             <Switch>
               <Route exact path="/" render={() => <Landing />} />
+              <Route exact path="/end" render={() => <End />} />
               <Route
                 exact
                 path="/signup"
                 render={() => (
-                  <div>
+                  <div className="container signup-form">
                     <Progress
                       percent={this.state.progress}
                       theme={{

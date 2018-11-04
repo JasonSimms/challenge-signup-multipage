@@ -2,7 +2,7 @@ import React from "react";
 
 const Summary = props => {
   return (
-    <div className="container summary">
+    <div className="summary">
       {/* <p>{JSON.stringify(props.data)}</p> */}
       <h1>Summary:</h1>
       <p>Last Name: {props.data.nameLast}</p>
@@ -11,10 +11,11 @@ const Summary = props => {
       <p>Phone: {props.data.phone}</p>
       <p>Salary: {props.data.salary}</p>
 
-
+<a href="/end">
       <button className="signup">
-        Sign Up!
+        Thanks!
       </button>
+</a>
       <button className="startover" onClick={() => props.reset()}>
         Start Over
       </button>

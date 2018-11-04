@@ -5,8 +5,10 @@ class Email extends Component {
   render() {
 
     return (
-      <div className="container email-form">
+      <div className="email-form">
         <h1>Where can we send our great offers?</h1>
+        <p className="input-title">Email:</p>
+
         <input
           type="email"
           value={this.props.target}
@@ -14,7 +16,7 @@ class Email extends Component {
             this.props.handleInputChange("email", evt.target.value)
           }
           className="input"
-          placeholder="email"
+          placeholder="John.Snow@aol.com"
         />
         <br />
         <br />
