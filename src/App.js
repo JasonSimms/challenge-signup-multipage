@@ -93,7 +93,7 @@ class App extends Component {
                 exact
                 path="/signup"
                 render={() => (
-                  <div className="container signup-form">
+                  <div className="container input-container">
                     <Progress
                       percent={this.state.progress}
                       theme={{

@@ -5,7 +5,7 @@ class Phone extends Component {
   render() {
 
     return (
-      <div className="phone-form">
+      <div className="input-form">
         <h1>Where can we give you a call?</h1>
         <p className="input-title">Phone Number:</p>
 

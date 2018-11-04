@@ -2,7 +2,7 @@ import React from "react";
 
 const Landing = props => {
   return (
-    <div className="container landing">
+    <div className="container greeting-container">
       <h1>Welcome!</h1>
       <h2>A Registration Form by Jason Simms</h2>
       <a href="/signup">

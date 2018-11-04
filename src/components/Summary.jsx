@@ -2,7 +2,7 @@ import React from "react";
 
 const Summary = props => {
   return (
-    <div className="summary">
+    <div className="input-form">
       {/* <p>{JSON.stringify(props.data)}</p> */}
       <h1>Summary:</h1>
       <p>Last Name: {props.data.nameLast}</p>

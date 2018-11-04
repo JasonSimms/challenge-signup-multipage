@@ -11,7 +11,11 @@ body {
   background-color: grey;
   /* background: -webkit-linear-gradient(360deg, #224e4d 10%, #083023 360%); */
   /* background: linear-gradient(360deg, #224e4d 10%, #083023 360%); */
-  background: linear-gradient(to left top, #00aaaa, #5ebfbe, #90d4d2, #bce9e7, #e7fefd);
+  background-image: linear-gradient(to left top, #00aaaa, #5ebfbe, #90d4d2, #bce9e7, #e7fefd);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 code {
@@ -21,10 +25,25 @@ code {
 
 .container {
   background-color: beige;
-  width: 1200px;
-  max-width: 96%;
-  margin: 0 auto;
-  padding: 5px;
+  width: 100vw;
+  max-width: 90%;
+  margin: auto auto;
+  padding: 1vw;
+}
+
+.input-form {
+  border-radius: 10px;
+  border: 1px red dashed;
+}
+
+.input-container {
+  border-radius: 10px;
+  border: 3px red dashed;
+}
+
+.greeting-container{
+  border-radius: 10px;
+  border: 3px blue dashed;
 }
 
 /* On screens that are 992px or less, set the background color to blue */

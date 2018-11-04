@@ -5,7 +5,7 @@ class Email extends Component {
   render() {
 
     return (
-      <div className="email-form">
+      <div className="input-form">
         <h1>Where can we send our great offers?</h1>
         <p className="input-title">Email:</p>
 

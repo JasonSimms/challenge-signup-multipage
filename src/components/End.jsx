@@ -2,7 +2,7 @@ import React from "react";
 
 const Ending = props => {
   return (
-    <div className="container landing">
+    <div className="container greeting-container">
       <h1>Thanks For Participating!</h1>
       <a href="https://www.linkedin.com/in/jason-simms/edit/birthday/">
         LinkedIn

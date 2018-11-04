@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Name extends Component {
   render() {
     return (
-      <div className="name-form">
+      <div className="input-form">
         <h1>Just A Few Questions To Get Us Started...</h1>
         <p className="input-title">First Name:</p>
         <input
