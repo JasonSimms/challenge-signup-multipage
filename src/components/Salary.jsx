@@ -11,14 +11,24 @@ class Salary extends Component {
       "Mehr als 4.000"
     ];
 
-    let mappedSalary = labels.map((range,index) => <div key={range}><input
-      type="radio"
-      value={range}
-      onChange={evt =>
-        this.props.handleInputChange("salary", evt.target.value)
-      }
-      className="input"
-    />{range}</div>)
+    // let mappedSalary = labels.map((range,index) => <div key={range}><input
+    //   type="radio"
+    //   value={range}
+    //   onChange={evt =>
+    //     this.props.handleInputChange("salary", evt.target.value)
+    //   }
+    //   className="input"
+    // />{range}</div>)
+
+    let mappedSalary = labels.map((range,index) => <p key={range}><input
+    type="radio"
+    name="salaryAnswer"
+    value={range}
+    onChange={evt =>
+      this.props.handleInputChange("salary", evt.target.value)
+    }
+    className="input"
+  />{range}</p>)
     return (
       <div className="input-form">
         <h1>Household Salary?</h1>

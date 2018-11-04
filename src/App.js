@@ -67,7 +67,7 @@ class App extends Component {
     // Build Navigational Controls
     let navNext, navBack;
 
-    if (this.state.step > 0 && this.state.step < 4) {
+    if (this.state.step > 0 && this.state.step <= 4) {
       navBack = (
         <button className="button back" onClick={() => this._navigate("back")}>
           Back
