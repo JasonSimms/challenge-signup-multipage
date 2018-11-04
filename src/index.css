@@ -46,6 +46,20 @@ code {
   border: 3px blue dashed;
 }
 
+h1{
+  color: hsl(0,0%,14%);
+  font-weight: 700;
+}
+
+p{
+  color: hsl(0,0%,29%);
+  font-weight: 450;
+}
+
+button{
+  background-color: teal;
+}
+
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 992px) {
   body {

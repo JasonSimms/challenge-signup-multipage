@@ -19,7 +19,7 @@ class Name extends Component {
 
         <input
           type="name"
-          value={this.props.target}
+          value={this.props.target2}
           onChange={evt =>
             this.props.handleInputChange("nameLast", evt.target.value)
           }

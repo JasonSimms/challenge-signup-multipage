@@ -41,7 +41,8 @@ class App extends Component {
     // Array of Components to support conditional rendering based on this.state.step.
     const displayedFormARR = [
       <Name
-        target={this.state.name}
+        target2={this.state.nameLast}
+        target={this.state.nameFirst}
         handleInputChange={this._handleInputChange}
         error={this.state.error}
       />,
