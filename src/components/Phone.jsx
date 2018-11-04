@@ -17,6 +17,7 @@ class Phone extends Component {
           }
           className="input"
           placeholder="XXXXXXXXXXX"
+          autofocus="true"
         />
         <br />
         <br />

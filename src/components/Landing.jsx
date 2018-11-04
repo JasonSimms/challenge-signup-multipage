@@ -2,11 +2,13 @@ import React from "react";
 
 const Landing = props => {
   return (
-    <div className="container greeting-container">
+    <div className="input-container">
+    <div className="input-form">
+
       <h1>Welcome!</h1>
       <h2>A Registration Form by Jason Simms</h2>
       <a href="/signup">
-      <button className="signup">
+      <button className="signup" autofocus="true">
       SIGN UP!
       </button>
      </a>
@@ -25,6 +27,7 @@ const Landing = props => {
           <li>Input Validation Using REGEX</li>
           <li>ReactJS state controls</li>
       </ul>
+    </div>
     </div>
   );
 };

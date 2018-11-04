@@ -17,6 +17,7 @@ class Email extends Component {
           }
           className="input"
           placeholder="John.Snow@aol.com"
+          autofocus="true"
         />
         <br />
         <br />
