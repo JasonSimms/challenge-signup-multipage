@@ -15,6 +15,8 @@ import Summary from "./components/Summary";
 import NotFound from "./components/NotFound";
 import End from "./components/End";
 
+import Music from "./components/Music"
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +29,7 @@ class App extends Component {
       nameLast: ``,
       email: ``,
       phone: ``,
-      salary: ``
+      salary: ``,
     };
 
     this._setProgress = this._setProgress.bind(this);
@@ -35,6 +37,7 @@ class App extends Component {
     this._reset = this._reset.bind(this);
     this._navigate = this._navigate.bind(this);
     this._validate = this._validate.bind(this);
+
   }
 
   render() {
@@ -85,6 +88,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
+        <Music/>
         <BrowserRouter>
           <React.Fragment>
             <Switch>
@@ -175,9 +179,10 @@ class App extends Component {
   }
 
   _setProgress() {
-    if (this.state.progress < 100)
+    const steps = 5
+    const interval = 100/steps
       this.setState(prevState => ({
-        progress: prevState.progress + 25
+        progress: prevState.step + interval
       }));
   }
 
@@ -213,5 +218,7 @@ class App extends Component {
       }, 1000);
     }
   }
+
+ 
 }
 export default App;

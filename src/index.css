@@ -87,6 +87,12 @@ button {
   color: hsl(0, 0%, 97%);
 }
 
+.music-btn{
+  align-self: flex-end;
+  /* color: red; */
+  background-color: red
+}
+
 .back {
   background-color: transparent;
   color: hsl(0, 0%, 29%);

@@ -8,7 +8,7 @@ const Landing = props => {
       <h1>Welcome!</h1>
       <h2>A Registration Form by Jason Simms</h2>
       <a href="/signup">
-      <button className="signup" autofocus="true">
+      <button className="signup">
       SIGN UP!
       </button>
      </a>
