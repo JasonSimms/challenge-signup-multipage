@@ -1,35 +1,33 @@
-// // NEEDS TO BE REWRITTEN TO SUPPORT NEW OUTPUTS FROM metrics/return.js
+const isInputValid = require("../js/isInputValid");
+// const validState1 = require("./validAppState");
 
-// const rateOfReturn = require("../app/metrics/return");
-const isInputValid = require('../js/isInputValid')
-// const testData = require('./testData')
-// const testData1 = testData.testData1
-// const testData2 = testData.testData2
+const valid = {
+  email: "myEmail@gmx.de",
+  error: null,
+  nameFirst: "Jason",
+  nameLast: "Simms",
+  phone: "123456",
+  progress: 75,
+  salary: "0 - 1.000",
+  step: 3
+};
 
+test(`test correctly written`, () => {
+  expect(isInputValid(1, "not an object")).toBeUndefined();
+});
 
-// test('Empty')
-// test(`Empty data array returns empty message`, () => {
-//   expect(rateOfReturn([])).toBe("Rate of Return: Data Sent Empty")
-// });
+test(`Accepts Reasonable Name`, () => {
+  expect(isInputValid(0, valid)).toBeTruthy();
+});
 
-// test(`rateOfReturn returns a string`, () => {
-//   expect(typeof(rateOfReturn(testData1))).toBe(`string`)
-// });
+test(`Accepts Reasonable Email`, () => {
+  expect(isInputValid(1, valid)).toBeTruthy();
+});
 
-// test('rateOfReturn prints a string beginning with "Return:"', () => {
-//   expect(rateOfReturn(testData1)).toMatch(
-//     /Return:/
-//   );
-// });
+test(`Accepts Reasonable Phone`, () => {
+  expect(isInputValid(2, valid)).toBeTruthy();
+});
 
-// test('rateOfReturn calculates Rate of Return?', () => {
-//   expect(rateOfReturn(testData2)).toMatch(/2.48/);
-// });
-
-// test('rateOfReturn calculates Rate of Return Percentage?', () => {
-//   expect(rateOfReturn(testData2)).toMatch(/1.8%/);
-// });
-
-// test('rateOfReturn calculates on first and last data in array?', () => {
-//   expect(rateOfReturn(testData2)).toMatch(/2018-01-02 ->/);
-// });
+test(`Accepts Salary Input`, () => {
+  expect(isInputValid(3, valid)).toBeTruthy();
+});

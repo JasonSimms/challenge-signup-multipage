@@ -4,7 +4,7 @@ class Name extends Component {
   render() {
     return (
       <div className="input-form">
-        <h1>Just A Few Questions To Get Us Started...</h1>
+        <h1>We just have a few questions to get to know you...</h1>
         <p className="input-title">First Name:</p>
         <input
           type="name"
@@ -14,7 +14,7 @@ class Name extends Component {
           }
           className="input"
           placeholder="John"
-          autoFocus="true"
+          autoFocus={true}
         />
         <p className="input-title">Last Name:</p>
 
