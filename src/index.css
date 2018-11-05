@@ -37,6 +37,10 @@ code {
   padding: 1vw;
 }
 
+.pseudo-container {
+  display: flex;
+}
+
 .input-form {
   border-radius: 10px;
   /* border: 1px green dashed; */
@@ -87,10 +91,15 @@ button {
   color: hsl(0, 0%, 97%);
 }
 
-.music-btn{
-  align-self: flex-end;
-  /* color: red; */
-  background-color: red
+.music-btn {
+  position: absolute;
+  right: 5vw;
+  bottom: 2vh;
+  border: 3px solid #00aaaa;
+  padding: 10px;
+  border-radius: 10px 15px;
+  background-color: white;
+  color: #00aaaa;
 }
 
 .back {

@@ -14,7 +14,7 @@ class Name extends Component {
           }
           className="input"
           placeholder="John"
-          autofocus="true"
+          autoFocus="true"
         />
         <p className="input-title">Last Name:</p>
 

@@ -11,9 +11,9 @@ const Summary = props => {
       <p>Phone: {props.data.phone}</p>
       <p>Salary: {props.data.salary}</p>
 
-<a href="/end">
+<a href="/">
       <button className="signup">
-        Thanks!
+        Landing
       </button>
 </a>
       <button className="startover" onClick={() => props.reset()}>

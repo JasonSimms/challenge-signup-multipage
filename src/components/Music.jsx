@@ -5,7 +5,7 @@ class Music extends Component {
     super(props);
 
     this.state = {
-      play: true
+      play: false
     };
 
     this.url = "./Local-forecast-elevator-music/Elevator-music.mp3";
@@ -13,9 +13,12 @@ class Music extends Component {
     this.togglePlay = this.togglePlay.bind(this);
   }
 
-  render() {
+  componentDidMount() {
+    // this.togglePlay();
     this.audio.play();
+  }
 
+  render() {
     return (
       <button className="music-btn" onClick={this.togglePlay}>
         {this.state.play ? "Pause" : "Play"}

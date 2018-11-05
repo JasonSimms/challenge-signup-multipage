@@ -27,6 +27,8 @@ const Landing = props => {
           <li>Input Validation Using REGEX</li>
           <li>ReactJS state controls</li>
       </ul>
+
+      <a href="https://github.com/JasonSimms/challenge-signup-multipage">GITHUB LINK</a>
     </div>
     </div>
   );

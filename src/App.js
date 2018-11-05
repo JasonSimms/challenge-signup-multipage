@@ -15,7 +15,7 @@ import Summary from "./components/Summary";
 import NotFound from "./components/NotFound";
 import End from "./components/End";
 
-import Music from "./components/Music"
+import Music from "./components/Music";
 
 class App extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ class App extends Component {
       nameLast: ``,
       email: ``,
       phone: ``,
-      salary: ``,
+      salary: ``
     };
 
     this._setProgress = this._setProgress.bind(this);
@@ -37,7 +37,6 @@ class App extends Component {
     this._reset = this._reset.bind(this);
     this._navigate = this._navigate.bind(this);
     this._validate = this._validate.bind(this);
-
   }
 
   render() {
@@ -88,9 +87,9 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Music/>
+        <Music />
         <BrowserRouter>
-          <React.Fragment>
+          <div className="pseudo-container">
             <Switch>
               <Route exact path="/" render={() => <Landing />} />
               <Route exact path="/end" render={() => <End />} />
@@ -128,7 +127,7 @@ class App extends Component {
 
               <Route component={NotFound} />
             </Switch>
-          </React.Fragment>
+          </div>
         </BrowserRouter>
       </React.Fragment>
     );
@@ -179,11 +178,13 @@ class App extends Component {
   }
 
   _setProgress() {
-    const steps = 5
-    const interval = 100/steps
+    const steps = 4;
+    const interval = 100 / steps;
+    if (this.state.progress < 100) {
       this.setState(prevState => ({
-        progress: prevState.step + interval
+        progress: (1 + this.state.step) * interval
       }));
+    }
   }
 
   _handleInputChange(key, newValue) {
@@ -210,15 +211,13 @@ class App extends Component {
       this.setState(prevState => ({ step: prevState.step - 1 }));
     else if (this._validate(this.state.step)) {
       this._setProgress();
-
+// TIMEOUT ASSISTS IN ANIMATIONS DELAY. Can be removed for UI enhancements.
       setTimeout(() => {
         this.setState(prevState => ({
           step: prevState.step + 1
         }));
-      }, 1000);
+      }, 10);
     }
   }
-
- 
 }
 export default App;
