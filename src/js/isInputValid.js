@@ -5,7 +5,7 @@ This validator uses a switch with a case derived from the object passed.
 
 const isInputValid = (step, state) => {
   let regex 
-  let validationMessage = false;
+  let validationMessage = ``
   switch (step) {
     case 0:
       regex = /^[a-zA-Z]*$/gm;
@@ -41,7 +41,7 @@ const isInputValid = (step, state) => {
     default:
       return false;
   }
-  if(validationMessage)alert(validationMessage);
+  if(validationMessage !== ``)alert(validationMessage);
 };
 
 module.exports = isInputValid;
