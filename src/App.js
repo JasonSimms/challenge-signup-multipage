@@ -110,7 +110,6 @@ class App extends Component {
       <React.Fragment>
         <BrowserRouter>
           <div className="pseudo-container">
-          DEBUG...
             <Switch>
               <Route exact path="/" render={() => <Landing />} />
               <Route exact path="/end" render={() => <End />} />
