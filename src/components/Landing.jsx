@@ -29,6 +29,10 @@ const Landing = props => {
       </ul>
 
       <a href="https://github.com/JasonSimms/challenge-signup-multipage">GITHUB LINK</a>
+      <br/>
+      <a href="https://www.linkedin.com/in/jason-simms/">Linkedin</a>
+      <br/>
+      <a href="https://jasonsimms.github.io/Type-Attack/">Play my Typing Game!</a>
     </div>
     </div>
   );

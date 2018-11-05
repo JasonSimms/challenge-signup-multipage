@@ -50,4 +50,14 @@
 
 ## Future Improvements
 
-- Layout CSS
+- Phone Numbers entry can use formatting to allow characters + ( - ) and later removed in processing before submitting for summary or server post.
+
+- Animations on hover or input field select could be embelished.
+
+- Processing should be used to eliminate spaces and bad capilization on string entries.
+
+- Icons could be used for buttons to enhance UX.
+
+- Alert message for invalid entry could be replaced by input labels or tips.
+
+- Button positions can be improved
