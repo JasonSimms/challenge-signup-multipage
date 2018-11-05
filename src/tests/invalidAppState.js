@@ -1,12 +1,14 @@
+// Stored Snapshot of inValid input states
+
 const invalidState1 = {
-    email: "myEmail@gmx.de",
+    email: "",
     error: null,
-    nameFirst: "Jason",
-    nameLast: "Simms",
-    phone: "123456",
-    progress: 75,
-    salary: "0 - 1.000",
-    step: 3
+    nameFirst: "Ja54234son",
+    nameLast: ".",
+    phone: "a456",
+    progress: 175,
+    salary: "",
+    step: 10
   };
   
   module.exports = {
