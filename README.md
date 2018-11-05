@@ -12,15 +12,39 @@
 -   This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Technical Choices
-1.    
+1. Create-React-App Template   
 
-- Solution: The list of houses displayed is controled by the paginator at the top of the list.  This changes the API call address to load houses on state change.  This ensures live data in case there has been a change since the last load.
+- This template is a quick start way to get going on a React App Fast.
+
+2. React-sweet-progress 
+
+- A React component for creating customized progress bars
+
+3. react-fade-in
+
+- Fast way to apply simple animations to form loading
+
+4. Jest testing
+
+- Comes pre installed in Create-React-App but is further applied to my Javascript functions.
 
 ## Decisions
 
-2.  House Details from the API come as an object with varying amount of keys.
+1.  Conditional Rendering controls which page of the application is seen.  
 
-- Solution: Before being displayed an array of Object keys is built and then iterated as a map referencing the original object.
+- More Info: All components are held in displayedFormARR (App.js line 49). After each successful input, state.step is incremented resulting in the next choice from the array.
+
+2.  Inputs are constantly updated to the app.js state and validated before advancing.
+
+3.  Input is validated through src/js/isInputValid.js.
+
+- This function recieves the step number as a key which corresponds to a switch logic tree.  The second variable is the entire state object so that the function can always be applied universally at any time.
+
+- Inputs are checked against various Regular Expressions and an invalid entry will limit the user from progressing as well as trigger an alert message assisting them in filling out their form.
+
+4. Navigation buttons and form reset buttons are also rendered conditionally based on the current step. Reset only shows up on the final form page.
+
+
 
 ****
 

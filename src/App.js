@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("mounted");
+    console.log("Thank you for your interest in my code");
     this._reset();
   }
   render() {
@@ -96,7 +96,10 @@ class App extends Component {
           <a href="/">
             <button className="button next">Landing</button>
           </a>
-          <button className="button next startover" onClick={() => this._reset()}>
+          <button
+            className="button next startover"
+            onClick={() => this._reset()}
+          >
             Start Over
           </button>
         </React.Fragment>
@@ -140,7 +143,7 @@ class App extends Component {
                     {navNext}
                     {summaryNav}
                     <div className="pseudo-container">
-                    <Music />
+                      <Music />
                     </div>
                   </div>
                 )}
