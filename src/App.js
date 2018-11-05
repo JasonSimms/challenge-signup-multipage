@@ -32,7 +32,7 @@ class App extends Component {
       phone: ``,
       salary: ``
     };
-    isInputValid.bind(this);
+    
     this._setProgress = this._setProgress.bind(this);
     this._handleInputChange = this._handleInputChange.bind(this);
     this._reset = this._reset.bind(this);

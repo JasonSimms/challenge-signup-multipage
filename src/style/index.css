@@ -24,6 +24,10 @@ body {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 code {
   font-family: "Lato", source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -40,6 +44,7 @@ code {
 .pseudo-container {
   display: flex;
   position: relative;
+  max-width: 1000px;
 }
 
 .input-form {
@@ -116,6 +121,16 @@ button {
 .back {
   background-color: transparent;
   color: hsl(0, 0%, 29%);
+}
+
+.link-icon {
+  height: 5vh;
+  padding-left: 10px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* On screens that are 992px or less, set the background color to blue */

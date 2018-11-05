@@ -1,5 +1,5 @@
 const isInputValid = require("../js/isInputValid");
-// const validState1 = require("./validAppState");
+const validState1 = require("./validAppState");
 
 const valid = {
   email: "myEmail@gmx.de",
@@ -30,4 +30,8 @@ test(`Accepts Reasonable Phone`, () => {
 
 test(`Accepts Salary Input`, () => {
   expect(isInputValid(3, valid)).toBeTruthy();
+});
+
+test(`Accepts Salary Input`, () => {
+  expect(isInputValid(3, validState1.validState1)).toBeTruthy();
 });
