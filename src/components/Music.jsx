@@ -27,7 +27,8 @@ class Music extends Component {
   }
 
   togglePlay() {
-    this.setState({ play: !this.state.play });
+    this.setState(prevState => ({ play: !prevState.play}))
+    // this.setState({ play: !this.state.play });
     console.log(this.audio);
     this.state.play ? this.audio.play() : this.audio.pause();
   }

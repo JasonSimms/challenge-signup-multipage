@@ -17,7 +17,7 @@ import End from "./components/End";
 
 import Music from "./components/Music";
 
-import isInputValid from "./js/isInputValid"
+import isInputValid from "./js/isInputValid";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -41,8 +41,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('mounted')
-    this._reset()
+    console.log("mounted");
+    this._reset();
   }
   render() {
     // Array of Components to support conditional rendering based on this.state.step.
@@ -68,11 +68,11 @@ class App extends Component {
         handleInputChange={this._handleInputChange}
         error={this.state.error}
       />,
-      <Summary data={this.state} error={this.state.error} reset={this._reset} />
+      <Summary data={this.state} error={this.state.error} />
     ];
 
     // Build Navigational Controls
-    let navNext, navBack;
+    let navNext, navBack, summaryNav;
 
     if (this.state.step > 0 && this.state.step <= 4) {
       navBack = (
@@ -87,6 +87,19 @@ class App extends Component {
         <button className="button next" onClick={() => this._navigate()}>
           Next
         </button>
+      );
+    }
+
+    if (this.state.step === 4) {
+      summaryNav = (
+        <React.Fragment>
+          <a href="/">
+            <button className="button next">Landing</button>
+          </a>
+          <button className="button next startover" onClick={() => this._reset()}>
+            Start Over
+          </button>
+        </React.Fragment>
       );
     }
 
@@ -125,7 +138,10 @@ class App extends Component {
                     {displayedFormARR[this.state.step]}
                     {navBack}
                     {navNext}
-                    <Music/>
+                    {summaryNav}
+                    <div className="pseudo-container">
+                    <Music />
+                    </div>
                   </div>
                 )}
               />
@@ -137,8 +153,6 @@ class App extends Component {
       </React.Fragment>
     );
   }
-
-
 
   _setProgress() {
     const steps = 4;
@@ -173,9 +187,8 @@ class App extends Component {
     if (key === "back")
       this.setState(prevState => ({ step: prevState.step - 1 }));
     else if (this.isInputValid(this.state.step, this.state)) {
-
       this._setProgress();
-// TIMEOUT ASSISTS IN ANIMATIONS DELAY. Can be removed for UI enhancements.
+      // TIMEOUT ASSISTS IN ANIMATIONS DELAY. Can be removed for UI enhancements.
       setTimeout(() => {
         this.setState(prevState => ({
           step: prevState.step + 1

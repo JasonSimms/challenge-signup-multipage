@@ -12,13 +12,6 @@ const Summary = props => {
         <p>Email: {props.data.email}</p>
         <p>Phone: {props.data.phone}</p>
         <p>Salary: {props.data.salary}</p>
-
-        <a href="/">
-          <button className="signup">Landing</button>
-        </a>
-        <button className="startover" onClick={() => props.reset()}>
-          Start Over
-        </button>
       </FadeIn>
     </div>
   );

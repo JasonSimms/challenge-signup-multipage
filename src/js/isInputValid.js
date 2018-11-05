@@ -4,7 +4,8 @@ This validator uses a switch with a case derived from the object passed.
 */
 
 const isInputValid = (step, state) => {
-  let regex, validationMessage;
+  let regex 
+  let validationMessage = false;
   switch (step) {
     case 0:
       regex = /^[a-zA-Z]*$/gm;
@@ -20,7 +21,7 @@ const isInputValid = (step, state) => {
       break;
     case 1:
       regex = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@(([0-9a-zA-Z])+([-\w]*[0-9a-zA-Z])*\.)+[a-zA-Z]{2,9})$/;
-      if (state.email && state.email.includes("@") && state.email.includes("."))
+      if (state.email && state.email.includes("@") && state.email.includes(".") && state.email.match(regex))
         return true;
       else
         validationMessage = `Invalid Email - Example@email.com my.email@aol.com`;
