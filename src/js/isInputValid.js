@@ -15,7 +15,8 @@ const isInputValid = (step, state) => {
         state.nameFirst.match(regex)
       )
         return true;
-      else validationMessage = `Please Enter a Valid First and Last Name`;
+      else validationMessage = `Please Enter a Valid First and Last Name
+      ex: John Snow`;
       break;
     case 1:
       regex = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@(([0-9a-zA-Z])+([-\w]*[0-9a-zA-Z])*\.)+[a-zA-Z]{2,9})$/;

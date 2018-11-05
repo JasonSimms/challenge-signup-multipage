@@ -92,7 +92,6 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <Music />
         <BrowserRouter>
           <div className="pseudo-container">
             <Switch>
@@ -126,6 +125,7 @@ class App extends Component {
                     {displayedFormARR[this.state.step]}
                     {navBack}
                     {navNext}
+                    <Music/>
                   </div>
                 )}
               />

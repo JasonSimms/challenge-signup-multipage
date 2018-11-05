@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import FadeIn from "react-fade-in";
+
 
 class Salary extends Component {
 
@@ -22,11 +24,14 @@ class Salary extends Component {
   />{range}</p>)
     return (
       <div className="input-form">
+      <FadeIn>
+
         <h1>Household Salary?</h1>
         {mappedSalary}
         <br />
         <br />
         <p>{this.props.error}</p>
+      </FadeIn>
       </div>
     );
   }

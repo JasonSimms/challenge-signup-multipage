@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import FadeIn from "react-fade-in";
+
 
 class Email extends Component {
 
@@ -6,6 +8,8 @@ class Email extends Component {
 
     return (
       <div className="input-form">
+      <FadeIn>
+
         <h1>Where can we send our great offers?</h1>
         <p className="input-title">Email:</p>
 
@@ -23,6 +27,8 @@ class Email extends Component {
         <br />
       
         <p>{this.props.error}</p>
+      </FadeIn>
+
       </div>
     );
   }
