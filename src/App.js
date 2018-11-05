@@ -1,6 +1,5 @@
 // Library Imports
 import React, { Component } from "react";
-// import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
@@ -14,10 +13,11 @@ import Salary from "./components/Salary";
 import Summary from "./components/Summary";
 import NotFound from "./components/NotFound";
 import End from "./components/End";
-
 import Music from "./components/Music";
 
+// Import functions:
 import isInputValid from "./js/isInputValid";
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -32,12 +32,11 @@ class App extends Component {
       phone: ``,
       salary: ``
     };
-
+    isInputValid.bind(this);
     this._setProgress = this._setProgress.bind(this);
     this._handleInputChange = this._handleInputChange.bind(this);
     this._reset = this._reset.bind(this);
     this._navigate = this._navigate.bind(this);
-    this.isInputValid = isInputValid.bind(this);
   }
 
   componentDidMount() {
@@ -140,9 +139,9 @@ class App extends Component {
                     />
                     {displayedFormARR[this.state.step]}
                     <div className="pseudo-container">
-                    {navBack}
-                    {navNext}
-                    {summaryNav}
+                      {navBack}
+                      {navNext}
+                      {summaryNav}
                       <Music />
                     </div>
                   </div>
@@ -156,7 +155,9 @@ class App extends Component {
       </React.Fragment>
     );
   }
+  // Functiondeclarations:
 
+  // Calculates and sets progress bar
   _setProgress() {
     const steps = 4;
     const interval = 100 / steps;
@@ -167,12 +168,14 @@ class App extends Component {
     }
   }
 
+  // Delivers input field to state
   _handleInputChange(key, newValue) {
     this.setState({
       [key]: newValue
     });
   }
 
+  // Resets form to start over
   _reset() {
     this.setState({
       error: null,
@@ -186,10 +189,11 @@ class App extends Component {
     });
   }
 
+  // Handles advancing through the form.
   _navigate(key) {
     if (key === "back")
       this.setState(prevState => ({ step: prevState.step - 1 }));
-    else if (this.isInputValid(this.state.step, this.state)) {
+    else if (isInputValid(this.state.step, this.state)) {
       this._setProgress();
       // TIMEOUT ASSISTS IN ANIMATIONS DELAY. Can be removed for UI enhancements.
       setTimeout(() => {
