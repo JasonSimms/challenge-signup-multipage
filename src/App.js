@@ -1,6 +1,6 @@
 // Library Imports
 import React, { Component } from "react";
-import "./App.css";
+// import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
