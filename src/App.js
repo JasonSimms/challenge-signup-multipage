@@ -17,6 +17,7 @@ import End from "./components/End";
 
 import Music from "./components/Music";
 
+import isInputValid from "./js/isInputValid"
 class App extends Component {
   constructor(props) {
     super(props);
@@ -36,9 +37,13 @@ class App extends Component {
     this._handleInputChange = this._handleInputChange.bind(this);
     this._reset = this._reset.bind(this);
     this._navigate = this._navigate.bind(this);
-    this._validate = this._validate.bind(this);
+    this.isInputValid = isInputValid.bind(this);
   }
 
+  componentDidMount() {
+    console.log('mounted')
+    this._reset()
+  }
   render() {
     // Array of Components to support conditional rendering based on this.state.step.
     const displayedFormARR = [
@@ -133,49 +138,7 @@ class App extends Component {
     );
   }
 
-  _validate(key) {
-    let regex;
-    let validationMessage = `Valid Entry!`;
-    switch (key) {
-      case 0:
-        regex = /^[a-zA-Z]*$/gm;
-        if (
-          this.state.nameFirst &&
-          this.state.nameLast &&
-          this.state.nameLast.match(regex) &&
-          this.state.nameFirst.match(regex)
-        )
-          return true;
-        else validationMessage = `Please Enter a Valid First and Last Name`;
-        break;
-      case 1:
-        regex = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@(([0-9a-zA-Z])+([-\w]*[0-9a-zA-Z])*\.)+[a-zA-Z]{2,9})$/;
-        if (
-          this.state.email &&
-          this.state.email.includes("@") &&
-          this.state.email.includes(".")
-        )
-          return true;
-        else validationMessage = `Invalid Email - Must Contain @`;
 
-        break;
-      case 2:
-        regex = /\d{5,20}/;
-        if (this.state.phone.match(regex)) return true;
-        else
-          validationMessage = `Invalid Phone - Digits Only Please! Length must be between 5 and 20`;
-
-        break;
-      case 3:
-        if (this.state.salary) return true;
-        else validationMessage = `Please Choose a Salary Range`;
-
-        break;
-      default:
-        return false;
-    }
-    alert(validationMessage);
-  }
 
   _setProgress() {
     const steps = 4;
@@ -209,7 +172,8 @@ class App extends Component {
   _navigate(key) {
     if (key === "back")
       this.setState(prevState => ({ step: prevState.step - 1 }));
-    else if (this._validate(this.state.step)) {
+    else if (this.isInputValid(this.state.step, this.state)) {
+
       this._setProgress();
 // TIMEOUT ASSISTS IN ANIMATIONS DELAY. Can be removed for UI enhancements.
       setTimeout(() => {

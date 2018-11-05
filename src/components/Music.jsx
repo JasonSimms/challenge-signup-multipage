@@ -21,7 +21,7 @@ class Music extends Component {
   render() {
     return (
       <button className="music-btn" onClick={this.togglePlay}>
-        {this.state.play ? "Pause" : "Play"}
+        {this.state.play ? "Play" : "Pause"  }
       </button>
     );
   }
