@@ -39,6 +39,7 @@ code {
 
 .pseudo-container {
   display: flex;
+  position: relative;
 }
 
 .input-form {
@@ -87,14 +88,25 @@ input {
 button {
   border: 0;
   border-radius: 3px;
-  background-color: teal;
+  padding: 13px;
+
+  background-color: #00aaaa;
+  /* background-image: linear-gradient(
+    to left top,
+    #00aaaa,
+    #5ebfbe,
+    #90d4d2,
+    #bce9e7,
+    #e7fefd
+  ); */
   color: hsl(0, 0%, 97%);
+  margin-left: 5px;
 }
 
 .music-btn {
   position: absolute;
   right: 5vw;
-  bottom: 2vh;
+  bottom: 0;
   border: 3px solid #00aaaa;
   padding: 10px;
   border-radius: 10px 15px;
@@ -111,7 +123,7 @@ button {
 @media screen and (max-width: 992px) {
   body {
     padding: 25px 10px;
-    background-color: red;
+    /* background-color: red; */
   }
 }
 
@@ -120,7 +132,7 @@ button {
   body {
     /* background-color: olive; */
     padding: 25px calc((100vw - 960px) / 2);
-    background: -webkit-linear-gradient(360deg, #224e4d 10%, #083023 360%);
-    background: linear-gradient(360deg, #224e4d 10%, #083023 360%);
+    /* background: -webkit-linear-gradient(360deg, #224e4d 10%, #083023 360%); */
+    /* background: linear-gradient(360deg, #224e4d 10%, #083023 360%); */
   }
 }

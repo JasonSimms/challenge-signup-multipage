@@ -61,3 +61,7 @@
 - Alert message for invalid entry could be replaced by input labels or tips.
 
 - Button positions can be improved
+
+- Add Backend Server to recieve entries.
+
+- Deploy.

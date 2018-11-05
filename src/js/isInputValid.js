@@ -4,8 +4,8 @@ This validator uses a switch with a case derived from the object passed.
 */
 
 const isInputValid = (step, state) => {
-  let regex 
-  let validationMessage = ``
+  let regex;
+  // let validationMessage = ``;
   switch (step) {
     case 0:
       regex = /^[a-zA-Z]*$/gm;
@@ -16,32 +16,39 @@ const isInputValid = (step, state) => {
         state.nameFirst.match(regex)
       )
         return true;
-      else validationMessage = `Please Enter a Valid First and Last Name
-      ex: John Snow`;
+      else
+        alert(`Please Enter a Valid First and Last Name)
+      ex: John Snow`);
       break;
     case 1:
       regex = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@(([0-9a-zA-Z])+([-\w]*[0-9a-zA-Z])*\.)+[a-zA-Z]{2,9})$/;
-      if (state.email && state.email.includes("@") && state.email.includes(".") && state.email.match(regex))
+      if (
+        state.email &&
+        state.email.includes("@") &&
+        state.email.includes(".") &&
+        state.email.match(regex)
+      )
         return true;
-      else
-        validationMessage = `Invalid Email - Example@email.com my.email@aol.com`;
+      else alert(`Invalid Email - Example@email.com my.email@aol.com`);
 
       break;
     case 2:
       regex = /\d{5,20}/;
       if (state.phone.match(regex)) return true;
       else
-        validationMessage = `Invalid Phone - Digits Only Please! Length must be between 5 and 20`;
+        alert(
+          `Invalid Phone - Digits Only Please! Length must be between 5 and 20`
+        );
 
       break;
     case 3:
       if (state.salary) return true;
-      else validationMessage = `Please Choose a Salary Range`;
+      else alert(`Please Choose a Salary Range`);
       break;
     default:
       return false;
   }
-  if(validationMessage !== ``)alert(validationMessage);
+  // if(validationMessage !== ``)alert(validationMessage);
 };
 
 module.exports = isInputValid;

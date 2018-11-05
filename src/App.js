@@ -139,10 +139,10 @@ class App extends Component {
                       }}
                     />
                     {displayedFormARR[this.state.step]}
+                    <div className="pseudo-container">
                     {navBack}
                     {navNext}
                     {summaryNav}
-                    <div className="pseudo-container">
                       <Music />
                     </div>
                   </div>
