@@ -1,7 +1,7 @@
 {
   "main.css": "/challenge-signup-multipage/static/css/main.5787bfaa.chunk.css",
-  "main.js": "/challenge-signup-multipage/static/js/main.f6617713.chunk.js",
-  "main.js.map": "/challenge-signup-multipage/static/js/main.f6617713.chunk.js.map",
+  "main.js": "/challenge-signup-multipage/static/js/main.2b6d3356.chunk.js",
+  "main.js.map": "/challenge-signup-multipage/static/js/main.2b6d3356.chunk.js.map",
   "static/css/1.408f620b.chunk.css": "/challenge-signup-multipage/static/css/1.408f620b.chunk.css",
   "static/js/1.040acc38.chunk.js": "/challenge-signup-multipage/static/js/1.040acc38.chunk.js",
   "static/js/1.040acc38.chunk.js.map": "/challenge-signup-multipage/static/js/1.040acc38.chunk.js.map",
@@ -10,6 +10,6 @@
   "static/css/1.408f620b.chunk.css.map": "/challenge-signup-multipage/static/css/1.408f620b.chunk.css.map",
   "static/css/main.5787bfaa.chunk.css.map": "/challenge-signup-multipage/static/css/main.5787bfaa.chunk.css.map",
   "index.html": "/challenge-signup-multipage/index.html",
-  "precache-manifest.d0168121b76b7928b43a1f1cc7a99ca8.js": "/challenge-signup-multipage/precache-manifest.d0168121b76b7928b43a1f1cc7a99ca8.js",
+  "precache-manifest.34092cfa368116a04a877edd0175a0d9.js": "/challenge-signup-multipage/precache-manifest.34092cfa368116a04a877edd0175a0d9.js",
   "service-worker.js": "/challenge-signup-multipage/service-worker.js"
 }
