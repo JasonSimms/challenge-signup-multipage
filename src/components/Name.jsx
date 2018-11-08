@@ -15,7 +15,7 @@ class Name extends Component {
               this.props.handleInputChange("nameFirst", evt.target.value)
             }
             className="input"
-            placeholder="John"
+            placeholder="Angela"
             autoFocus={true}
           />
           <p className="input-title">Last Name:</p>
@@ -27,7 +27,7 @@ class Name extends Component {
               this.props.handleInputChange("nameLast", evt.target.value)
             }
             className="input"
-            placeholder="Doe"
+            placeholder="Merkel"
           />
           <br />
           <br />

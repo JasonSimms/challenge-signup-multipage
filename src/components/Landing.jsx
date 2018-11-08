@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Landing = props => {
   return (
@@ -6,10 +7,9 @@ const Landing = props => {
       <div className="input-form">
         <h1>Welcome!</h1>
         <h2>A Registration Form by Jason Simms</h2>
-        <a href="/signup">
-          <button className="signup">SIGN UP!</button>
-        </a>
-
+        <Link className="btnlink" to={process.env.PUBLIC_URL + "/signup"}>
+          Click Here to Get Started!
+        </Link>
         <h3>This Application form includes:</h3>
         <ul>
           <li>Name</li>
@@ -25,21 +25,20 @@ const Landing = props => {
           <li>ReactJS state controls</li>
         </ul>
         <div className="flex-container">
-
-        <a href="https://github.com/JasonSimms/challenge-signup-multipage">
-          <img className="link-icon" src="githubico.png" alt="Github Icon" />
-          <p>Github</p>
-        </a>
-        <br />
-        <a href="https://www.linkedin.com/in/jason-simms/">
-          <img className="link-icon" src="linkedin.ico" alt="LinkedIn" />
-          <p>Linkedin</p>
-        </a>
-        <br />
-        <a href="https://jasonsimms.github.io/Type-Attack/">
-          <img className="link-icon" src="benderico.png" alt="TypeAttk" />
-          <p>Play my Typing Game!</p>
-        </a>
+          <a href="https://github.com/JasonSimms/challenge-signup-multipage">
+            <img className="link-icon" src="githubico.png" alt="Github Icon" />
+            <p>Github</p>
+          </a>
+          <br />
+          <a href="https://www.linkedin.com/in/jason-simms/">
+            <img className="link-icon" src="linkedin.ico" alt="LinkedIn" />
+            <p>Linkedin</p>
+          </a>
+          <br />
+          <a href="https://jasonsimms.github.io/Type-Attack/">
+            <img className="link-icon" src="benderico.png" alt="TypeAttk" />
+            <p>Play my Typing Game!</p>
+          </a>
         </div>
       </div>
     </div>

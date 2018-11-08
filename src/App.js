@@ -1,6 +1,6 @@
 // Library Imports
 import React, { Component } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import { Progress } from "react-sweet-progress";
 import "react-sweet-progress/lib/style.css";
 
@@ -12,7 +12,6 @@ import Phone from "./components/Phone";
 import Salary from "./components/Salary";
 import Summary from "./components/Summary";
 import NotFound from "./components/NotFound";
-import End from "./components/End";
 import Music from "./components/Music";
 
 // Import functions:
@@ -32,7 +31,7 @@ class App extends Component {
       phone: ``,
       salary: ``
     };
-    
+
     this._setProgress = this._setProgress.bind(this);
     this._handleInputChange = this._handleInputChange.bind(this);
     this._reset = this._reset.bind(this);
@@ -40,8 +39,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("Thank you for your interest in my code, Jason");
-    console.log("This is the process.env", process.env.PUBLIC_URL)
+    console.log("Thank you for your interest in my code!");
     this._reset();
   }
   render() {
@@ -93,14 +91,12 @@ class App extends Component {
     if (this.state.step === 4) {
       summaryNav = (
         <React.Fragment>
-          <a href="/">
-            <button className="button next">Landing</button>
-          </a>
+          <Link to={process.env.PUBLIC_URL + "/"} className="btnlink">
+            Landing
+          </Link>
           <button
-            className="button next startover"
-            onClick={() => this._reset()}
-          >
-            Start Over
+            className="button next startover" onClick=
+            {() => this._reset()}> Start Over
           </button>
         </React.Fragment>
       );
@@ -111,11 +107,14 @@ class App extends Component {
         <BrowserRouter>
           <div className="pseudo-container">
             <Switch>
-              <Route exact path={process.env.PUBLIC_URL + '/'} render={() => <Landing />} />
-              {/* <Route exact path="/end" render={() => <End />} /> */}
               <Route
                 exact
-                path={process.env.PUBLIC_URL + '/signup'}
+                path={process.env.PUBLIC_URL + "/"}
+                render={() => <Landing />}
+              />
+              <Route
+                exact
+                path={process.env.PUBLIC_URL + "/signup"}
                 render={() => (
                   <div className="container input-container">
                     <Progress
@@ -156,7 +155,7 @@ class App extends Component {
       </React.Fragment>
     );
   }
-  // Functiondeclarations:
+  // Function declarations:
 
   // Calculates and sets progress bar
   _setProgress() {

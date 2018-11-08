@@ -20,7 +20,7 @@ class Email extends Component {
             this.props.handleInputChange("email", evt.target.value)
           }
           className="input"
-          placeholder="John.Snow@aol.com"
+          placeholder="simmsTheCoder@gmail.com"
           autoFocus={true}
         />
         <br />

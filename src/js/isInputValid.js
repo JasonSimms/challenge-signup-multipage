@@ -18,7 +18,7 @@ const isInputValid = (step, state) => {
         return true;
       else
         alert(`Please Enter a Valid First and Last Name)
-      ex: John Snow`);
+      ex: Jason Simms or Jane Doe`);
       break;
     case 1:
       regex = /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@(([0-9a-zA-Z])+([-\w]*[0-9a-zA-Z])*\.)+[a-zA-Z]{2,9})$/;
@@ -29,7 +29,7 @@ const isInputValid = (step, state) => {
         state.email.match(regex)
       )
         return true;
-      else alert(`Invalid Email - Example@email.com my.email@aol.com`);
+      else alert(`Invalid Email - try bob@smith.com | bob@j.smith.museum | bob.smith@a-1.smith.com`);
 
       break;
     case 2:
@@ -37,7 +37,7 @@ const isInputValid = (step, state) => {
       if (state.phone.match(regex)) return true;
       else
         alert(
-          `Invalid Phone - Digits Only Please! Length must be between 5 and 20`
+          `Invalid Phone - Numbers only please! 12345.. up to 20 digits.`
         );
 
       break;

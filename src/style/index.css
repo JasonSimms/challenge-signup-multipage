@@ -1,4 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css?family=Nunito+Sans'); */
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 body {
   margin: 0;
@@ -26,6 +27,7 @@ body {
 
 a {
   text-decoration: none;
+  
 }
 
 code {
@@ -34,7 +36,6 @@ code {
 }
 
 .container {
-  /* background-color: beige; */
   width: 100vw;
   max-width: 90%;
   margin: auto auto;
@@ -49,7 +50,6 @@ code {
 
 .input-form {
   border-radius: 10px;
-  /* border: 1px green dashed; */
   border: 0;
 
   box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.08);
@@ -99,12 +99,22 @@ button {
     to left top,
     #00aaaa,
     #5ebfbe,
-    #90d4d2,
-    #bce9e7,
-    #e7fefd
+    #90d4d2
   ); */
   color: hsl(0, 0%, 97%);
   margin-left: 5px;
+  margin-top: 5px;
+}
+
+.btnlink{
+    border: 0;
+    border-radius: 3px;
+    padding: 13px;
+
+    background-color: #00aaaa;
+    color: hsl(0, 0%, 97%);
+    margin-left: 5px;
+    margin-top: 5px;
 }
 
 .music-btn {
@@ -115,7 +125,8 @@ button {
   padding: 10px;
   border-radius: 10px 15px;
   background-color: white;
-  color: #00aaaa;
+  /* color: #00aaaa; */
+  color:rgb(56, 50, 50);
 }
 
 .back {

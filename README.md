@@ -1,5 +1,7 @@
 # Multi Step SignUp Form in ReactJS, by Jason Simms
 
+[See this project deployed on Github!](https://jasonsimms.github.io/challenge-signup-multipage/)
+
 [![DeepScan grade](https://deepscan.io/api/teams/2472/projects/3556/branches/31597/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=2472&pid=3556&bid=31597)
 
 1. Clone or copy this repository
