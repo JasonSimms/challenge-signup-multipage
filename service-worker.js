@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/challenge-signup-multipage/precache-manifest.68393fed2f376f069ddf10573d88ee0e.js"
+  "/challenge-signup-multipage/precache-manifest.efa54db72a97421523fcf1f4f057bc83.js"
 );
 
 workbox.clientsClaim();
