@@ -40,7 +40,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("Thank you for your interest in my code");
+    console.log("Thank you for your interest in my code, Jason");
+    console.log("This is the process.env", process.env.PUBLIC_URL)
     this._reset();
   }
   render() {
@@ -107,7 +108,7 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <BrowserRouter>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <div className="pseudo-container">
             <Switch>
               <Route exact path="/" render={() => <Landing />} />
