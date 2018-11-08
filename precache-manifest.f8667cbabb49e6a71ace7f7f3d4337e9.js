@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/challenge-signup-multipage/static/js/runtime~main.4c1d748c.js"
   },
   {
-    "revision": "8ef3b1fe3eacd7bba048",
-    "url": "/challenge-signup-multipage/static/js/main.8ef3b1fe.chunk.js"
+    "revision": "c3616a77b2f82727540e",
+    "url": "/challenge-signup-multipage/static/js/main.c3616a77.chunk.js"
   },
   {
     "revision": "040acc385e521e670c38",
     "url": "/challenge-signup-multipage/static/js/1.040acc38.chunk.js"
   },
   {
-    "revision": "8ef3b1fe3eacd7bba048",
+    "revision": "c3616a77b2f82727540e",
     "url": "/challenge-signup-multipage/static/css/main.51df6d07.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/challenge-signup-multipage/static/css/1.408f620b.chunk.css"
   },
   {
-    "revision": "8a352e46fd77aff093813157abade946",
+    "revision": "4a1d2422706042e3106ca3c92f7f4bd8",
     "url": "/challenge-signup-multipage/index.html"
   }
 ];
