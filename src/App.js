@@ -108,14 +108,14 @@ class App extends Component {
 
     return (
       <React.Fragment>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter>
           <div className="pseudo-container">
             <Switch>
-              <Route exact path="/" render={() => <Landing />} />
-              <Route exact path="/end" render={() => <End />} />
+              <Route exact path={process.env.PUBLIC_URL + '/'} render={() => <Landing />} />
+              {/* <Route exact path="/end" render={() => <End />} /> */}
               <Route
                 exact
-                path="/signup"
+                path={process.env.PUBLIC_URL + '/signup'}
                 render={() => (
                   <div className="container input-container">
                     <Progress
